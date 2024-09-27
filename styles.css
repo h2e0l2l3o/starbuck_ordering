@@ -1,0 +1,206 @@
+/* #00704a */
+
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Pen+Script&display=swap");
+
+* {
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  /* 부모요소의 주 축(가로축)에서 자식 요소들을 가운데로 정렬 */
+  align-items: center;
+  /* 교차 축에서의 정렬(세로축 정렬) */
+  flex-direction: column;
+  padding: 50px 0;
+  margin: 0 40px;
+  background-color: #0b421a;
+  position: relative;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: solid 2px white;
+  width: 100%;
+  color: white;
+  gap: 20px;
+}
+img.icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  flex-direction: column;
+}
+
+.button_area {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* justify-content: space-between는 두 자식 요소를 양 끝에 배치하고 싶을 때 사용함 */
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.filtering {
+  display: flex;
+  right: 0;
+  position: absolute;
+  right: 10px;
+}
+
+#keyword {
+  border-radius: 5px;
+  border: solid 1px white;
+  margin-right: 5px;
+  padding-left: 10px;
+  width: 400px;
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  /* gap으로 요소 간격 지정 가능 */
+  flex-wrap: wrap;
+  /* 요소들이 넘치면 다음 줄로 넘어가게 하기 위해 flex-wrap: wrap 사용 */
+}
+h4 {
+  font-weight: 700;
+}
+.card {
+  flex-basis: calc(33.33% - 10px);
+  /* 요소의 너비를 3등분함(33.33%)
+  각 요소의 너비를 3등분하되, 간격(gap)을 고려해 calc()를 사용하여 정확히 3개씩 배치되도록 함. */
+  margin-bottom: 10px; /* 줄 간격을 위해 아래 여백 추가 */
+}
+.card-img-top {
+  height: 250px;
+  /* 사진 사이즈를 일정하게 하고 싶었음 */
+}
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-space {
+  position: fixed;
+  width: 450px;
+  height: 800px;
+  background-color: lightgoldenrodyellow;
+  right: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 100px;
+}
+
+.order-title {
+  font-weight: 700;
+  font-size: 40px;
+  padding: 20px 10px;
+  position: relative;
+  /* background-color: #0b421a; */
+}
+
+.total {
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 80px;
+  /* background-color: aliceblue; */
+}
+
+.price-area {
+  font-size: 20px;
+}
+.order-record {
+  width: 90%;
+  max-height: 500px;
+  overflow: auto;
+  position: relative;
+}
+.submit-area {
+  position: absolute;
+  bottom: 30px;
+  width: 90%;
+}
+
+#submit-btn {
+  width: 100%;
+  font-size: 30px;
+}
+
+.order-btn {
+  font-size: 20px;
+}
+
+li {
+  padding: 1px;
+}
+.remove {
+  font-size: 18px;
+  padding: 0 5px;
+  position: absolute;
+  right: 0;
+}
+
+/* 주문내역을 fixed로 위치 고정 시켜놓아서 몇몇 화면 사이즈가 다른 기기에서는 메뉴선택이 어려워질 수도 있을 것 같다고 판단함
+그래서, floating-button을 하나 만들어서 화면 상 클릭해야 주문내역 확인할 수 있도록 만들었음.
+*/
+
+.shopping-cart {
+  position: fixed;
+  background-color: #eac784;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  bottom: 60px;
+  right: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: solid 5px #362415;
+  color: #0b421a;
+}
+
+.shopping-cart:hover {
+  color: #362415;
+  border: solid 5px #eac784;
+  background-color: #fffcfc;
+}
+
+.cart {
+  font-size: 50px;
+  color: #023826;
+}
+
+#hide-btn {
+  border: dashed 2px #023826;
+  /* position: absolute; */
+  margin-top: 10px;
+  width: 90%;
+}
+#hide-btn:hover {
+  border: solid 2px #023826;
+  color: #023826;
+  background-color: transparent;
+}
